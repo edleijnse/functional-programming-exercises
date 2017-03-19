@@ -41,9 +41,9 @@ public class M02V004_D {
     elements
         .forEach(element -> {
           final Optional<IntBinaryOperator> op = OPERATOR_MAP.getOrDefault(element, Optional.empty());
-          op.ifPresentOrElse(
-              operator -> stack.push(EXECUTE.apply(stack, operator)),
-              ()       -> stack.push(Integer.parseInt(element)));
+//          op.ifPresentOrElse(
+//              operator -> stack.push(EXECUTE.apply(stack, operator)),
+//              ()       -> stack.push(Integer.parseInt(element)));
         });
     return stack.pop();
   }

@@ -20,14 +20,14 @@ import java.util.stream.IntStream;
 public class Main {
   public static void main(String[] args) {
 
-    try (final SubmissionPublisher<String> pub = new SubmissionPublisher<>()) {
-      CompletableFuture consume = pub.consume(System.out::println);
-      IntStream.range(1, 10)
-          .mapToObj(String::valueOf)
-          .forEach(pub::submit);
-      consume.get(10, TimeUnit.SECONDS);
-    } catch (InterruptedException | ExecutionException | TimeoutException e) {
-      e.printStackTrace();
-    }
-  }
+//    try (final SubmissionPublisher<String> pub = new SubmissionPublisher<>()) {
+//      CompletableFuture consume = pub.consume(System.out::println);
+//      IntStream.range(1, 10)
+//          .mapToObj(String::valueOf)
+//          .forEach(pub::submit);
+//      consume.get(10, TimeUnit.SECONDS);
+//    } catch (InterruptedException | ExecutionException | TimeoutException e) {
+//      e.printStackTrace();
+//    }
+ }
 }

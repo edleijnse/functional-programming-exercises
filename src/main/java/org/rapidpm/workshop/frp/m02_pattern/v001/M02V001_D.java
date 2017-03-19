@@ -92,15 +92,15 @@ public class M02V001_D {
 
   private static void virtualProxy() {
     final Service service = new ServiceProxyBuilder()
-        .withSupplier(DefaultService::new)
-        .withStrategyFunction(new Function<>() {
-          private Service service = null;
-          @Override
-          public Service apply(final Supplier<Service> serviceSupplier) {
-            if (service == null) service = serviceSupplier.get();
-            return service;
-          }
-        })
+//        .withSupplier(DefaultService::new)
+//        .withStrategyFunction(new Function<>() {
+//          private Service service = null;
+//          @Override
+//          public Service apply(final Supplier<Service> serviceSupplier) {
+//            if (service == null) service = serviceSupplier.get();
+//            return service;
+//          }
+//        })
         .build();
 
     service.doWork("Hello");

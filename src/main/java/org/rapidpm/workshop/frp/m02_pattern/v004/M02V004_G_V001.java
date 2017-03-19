@@ -33,14 +33,14 @@ public class M02V004_G_V001 {
   private static final Function<String, Integer> evaluate = (expression) -> {
     final Stack<Integer> stack = new Stack<>();
     for (final String s : expression.split(" ")) {
-      str2OpFNC.apply(s)
-          .ifPresentOrElse(op -> {
-                int right = stack.pop(); // not nice - state outside !?!
-                int left = stack.pop();
-                stack.push(op.applyAsInt(left, right));
-              },
-              () -> stack.push(Integer.parseInt(s))
-          );
+//      str2OpFNC.apply(s)
+//          .ifPresentOrElse(op -> {
+//                int right = stack.pop(); // not nice - state outside !?!
+//                int left = stack.pop();
+//                stack.push(op.applyAsInt(left, right));
+//              },
+//              () -> stack.push(Integer.parseInt(s))
+//          );
     }
     return stack.pop();
   };

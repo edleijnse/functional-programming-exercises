@@ -35,14 +35,14 @@ public class M02V004_C {
         .<String>stream(Spliterators.spliterator(split, Spliterator.ORDERED), false)
         .forEach(s -> {
           final Optional<IntBinaryOperator> op = OPERATOR_MAP.getOrDefault(s, Optional.empty());
-          op.ifPresentOrElse(
-              intBinaryOperator -> {
-                int right = stack.pop();
-                int left = stack.pop();
-                final int item = intBinaryOperator.applyAsInt(left, right);
-                stack.push(item);
-              },
-              () -> stack.push(Integer.parseInt(s)));
+//          op.ifPresentOrElse(
+//              intBinaryOperator -> {
+//                int right = stack.pop();
+//                int left = stack.pop();
+//                final int item = intBinaryOperator.applyAsInt(left, right);
+//                stack.push(item);
+//              },
+//              () -> stack.push(Integer.parseInt(s)));
         });
     return stack.pop();
   }
