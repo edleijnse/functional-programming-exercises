@@ -25,7 +25,7 @@ public class Main {
     final CompletableFuture<Void> f = c.thenApplyAsync((value) -> "--1--" + value + " step01")
         .thenApplyAsync((value) ->  "--2--" + value + " step02")
         .thenApplyAsync((value) ->  "--3--" +value + " step03")
-        // andere Werte, zum nachvollziehen der Aufbau: 
+        // edle: different values, to see what happens:
         .thenApplyAsync((value) ->  "--4--" + "value: " + (value) + (value) + "value end."+ " step04")
         .thenAcceptAsync(System.out::println);
 
