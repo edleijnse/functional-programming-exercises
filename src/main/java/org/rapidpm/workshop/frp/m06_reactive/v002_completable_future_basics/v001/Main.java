@@ -22,9 +22,11 @@ public class Main {
 
     final CompletableFuture<Long> c = CompletableFuture.supplyAsync(System::nanoTime);
 
-    final CompletableFuture<Void> f = c.thenApplyAsync((value) -> value + " step01")
-        .thenApplyAsync((value) -> value + " step02")
-        .thenApplyAsync((value) -> value + " step03")
+    final CompletableFuture<Void> f = c.thenApplyAsync((value) -> "--1--" + value + " step01")
+        .thenApplyAsync((value) ->  "--2--" + value + " step02")
+        .thenApplyAsync((value) ->  "--3--" +value + " step03")
+        // andere Werte, zum nachvollziehen der Aufbau: 
+        .thenApplyAsync((value) ->  "--4--" + "value: " + (value) + (value) + "value end."+ " step04")
         .thenAcceptAsync(System.out::println);
 
     f.join();
